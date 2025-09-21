@@ -1,0 +1,3 @@
+logging_info:
+  component: "synology-collector"
+  component_type: "python"
