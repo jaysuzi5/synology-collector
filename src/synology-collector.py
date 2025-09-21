@@ -11,11 +11,11 @@ class SynologyCollector:
         self._config = config
         logging_info = LoggingInfo(**self._config.get("logging_info", {}))
         self._logger = Logger(logging_info)
-        self._local_api_base_url = os.getenv("LOCAL_API_BASE_URL")
-        self._synology_user = os.getenv("NAS_USER")
-        self._synology_password = os.getenv("NAS_PASSWORD")
-        self._synology_ip = os.getenv("NAS_IP")
-        self._synology_port = int(os.getenv("NAS_PORT"))
+        self._local_api_base_url = os.getenv("LOCAL_API_BASE_URL").strip()
+        self._synology_user = os.getenv("NAS_USER").strip()
+        self._synology_password = os.getenv("NAS_PASSWORD").strip()
+        self._synology_ip = os.getenv("NAS_IP").strip()
+        self._synology_port = int(os.getenv("NAS_PORT").strip())
         self._transaction = None
 
     def process(self):
